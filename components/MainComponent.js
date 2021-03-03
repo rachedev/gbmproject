@@ -1,36 +1,42 @@
 import React, { Component } from "react";
 import Directory from "./DirectoryComponent";
 import CakeInfo from "./CakeInfoComponent";
-import { View } from "react-native";
-import { CAKES } from "../shared/cakes";
+import { View, Platform } from "react-native";
+import { createStackNavigator } from "react-navigation-stack";
+import { createAppContainer } from "react-navigation";
+
+const DirectoryNavigator = createStackNavigator(
+  {
+    Directory: { screen: Directory },
+    CakeInfo: { screen: CakeInfo },
+  },
+  {
+    initialRouteName: "Directory",
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: "#ffff00",
+      },
+      headerTintColor: "#000",
+      headerTitleStyle: {
+        color: "#000",
+      },
+    },
+  }
+);
+
+const AppNavigator = createAppContainer(DirectoryNavigator);
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cakes: CAKES,
-      selectedCake: null,
-    };
-  }
-
-  onCakeSelect(cakeId) {
-    this.setState({ selectedCake: cakeId });
-  }
-
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <Directory
-          cakes={this.state.cakes}
-          onPress={(cakeId) => this.onCakeSelect(cakeId)}
-        />
-        <CakeInfo
-          cake={
-            this.state.cakes.filter(
-              (cake) => cake.id === this.state.selectedCake
-            )[0]
-          }
-        />
+      <View
+        style={{
+          flex: 1,
+          paddingTop:
+            Platform.OS === "ios" ? 0 : Expo.Constants.statusBarHeight,
+        }}
+      >
+        <AppNavigator />
       </View>
     );
   }
