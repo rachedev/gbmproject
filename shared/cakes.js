@@ -5,7 +5,7 @@ export const CAKES = [
     image: "/assets/images/mlayer1.jpg",
     flavor: "chocolate or vanilla",
     featured: false,
-    description: "Double the layer, double the deliciousness!",
+    description: "Multiple layers, multiple deliciousness!",
   },
   {
     id: 1,
@@ -14,7 +14,7 @@ export const CAKES = [
     flavor: "chocolate or vanilla",
     featured: false,
     description:
-      "Choose your favorite character and we'll make a cake with it!",
+      "Choose your favorite animated character and we'll make a cake with it as the centerpiece!",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const CAKES = [
     flavor: "chocolate or vanilla",
     featured: false,
     description:
-      "What's your party's theme? Let's make a cake to celebrate it!",
+      "What's your party's theme? Let's make a cake to celebrate with it!",
   },
   {
     id: 3,
@@ -31,6 +31,7 @@ export const CAKES = [
     image: "/assets/images/onelayer1.jpg",
     flavor: "chocolate or vanilla",
     featured: true,
-    description: "I may be small, but I am packed with flavor and yum!",
+    description:
+      "I may be small in stature, but I am packed with flavor and yum!",
   },
 ];
