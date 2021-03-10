@@ -5,7 +5,7 @@ import { SERVICES } from "../shared/services";
 
 function Standard() {
   return (
-    <Card title="Our Standard">
+    <Card title="Our Quality Promise">
       <Text>
         We offer you, our customers, a partnership. We work with you to plan out
         your dream party baked goodies - from cakes to cookies to bars to
@@ -43,7 +43,7 @@ class About extends Component {
     return (
       <ScrollView>
         <Standard />
-        <Card title="Our Services">
+        <Card title="What We Offer">
           <FlatList
             data={this.state.services}
             renderItem={renderService}
