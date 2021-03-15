@@ -4,6 +4,8 @@ import Directory from "./DirectoryComponent";
 import CakeInfo from "./CakeInfoComponent";
 import About from "./AboutComponent";
 import Contact from "./ContactComponent";
+import Quotation from "./QuotationComponent";
+
 import {
   View,
   Platform,
@@ -17,6 +19,31 @@ import { createDrawerNavigator, DrawerItems } from "react-navigation-drawer";
 import { createAppContainer } from "react-navigation";
 import { Icon } from "react-native-elements";
 import SafeAreaView from "react-native-safe-area-view";
+
+const QuotationNavigator = createStackNavigator(
+  {
+    Quotation: { screen: Quotation },
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: "#ffff00",
+      },
+      headerTintColor: "#000",
+      headerTitleStyle: {
+        color: "#000",
+      },
+      headerLeft: (
+        <Icon
+          name="birthday-cake"
+          type="font-awesome"
+          iconStyle={styles.stackIcon}
+          onPress={() => navigation.toggleDrawer()}
+        />
+      ),
+    }),
+  }
+);
 
 const AboutNavigator = createStackNavigator(
   {
@@ -162,6 +189,20 @@ const MainNavigator = createDrawerNavigator(
         drawerLabel: "Cake Varieties",
         drawerIcon: ({ tintColor }) => (
           <Icon name="list" type="font-awesome" size={24} color={tintColor} />
+        ),
+      },
+    },
+    Quotation: {
+      screen: QuotationNavigator,
+      navigationOptions: {
+        drawerLabel: "Request Price Quotation",
+        drawerIcon: ({ tintColor }) => (
+          <Icon
+            name="birthday-cake"
+            type="font-awesome"
+            size={24}
+            color={tintColor}
+          />
         ),
       },
     },
