@@ -5,7 +5,7 @@ export const SERVICES = [
     image: "/assets/images/custom.jpg",
     featured: false,
     description:
-      "We work with you in your desire for a cake customized to your party needs",
+      "We work with you in your desire for cakes customized to your party needs",
   },
   {
     id: 1,

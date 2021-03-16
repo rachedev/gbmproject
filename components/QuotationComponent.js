@@ -7,6 +7,7 @@ import {
   Picker,
   Switch,
   Button,
+  Modal,
 } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 
@@ -15,10 +16,11 @@ class Quotation extends Component {
     super(props);
 
     this.state = {
-      cakeType: 1,
+      cakeType: "Character Cake with Fondant Icing",
       pickUp: false,
       date: new Date(),
       showCalendar: false,
+      showModal: false,
     };
   }
 
@@ -26,13 +28,22 @@ class Quotation extends Component {
     title: "Request for Price Quotation",
   };
 
+  toggleModal() {
+    this.setState({ showModal: !this.state.showModal });
+  }
+
   handleQuotation() {
     console.log(JSON.stringify(this.state));
+    this.toggleModal();
+  }
+
+  resetForm() {
     this.setState({
-      cakeType: 1,
+      cakeType: "Character Cake with Fondant Icing",
       pickUp: false,
       date: new Date(),
       showCalendar: false,
+      showModal: false,
     });
   }
 
@@ -49,17 +60,20 @@ class Quotation extends Component {
             }
           >
             <Picker.Item
-              label="1 - Character Cake with Fondant Icing"
-              value="1"
+              label="Character Cake with Fondant Icing"
+              value="Character Cake with Fondant Icing"
             />
             <Picker.Item
-              label="2 - Character Cake with Buttercream Icing"
-              value="2"
+              label="Character Cake with Buttercream Icing"
+              value="Character Cake with Buttercream Icing"
             />
-            <Picker.Item label="3 - Theme Cake with Fondant Icing" value="3" />
             <Picker.Item
-              label="4 - Theme Cake with Buttercream Icing"
-              value="4"
+              label="Theme Cake with Fondant Icing"
+              value="Theme Cake with Fondant Icing"
+            />
+            <Picker.Item
+              label="Theme Cake with Buttercream Icing"
+              value="Theme Cake with Buttercream Icing"
             />
           </Picker>
         </View>
@@ -68,7 +82,7 @@ class Quotation extends Component {
           <Switch
             style={styles.formItem}
             value={this.state.pickUp}
-            trackColor={{ true: "#5637DD", false: null }}
+            trackColor={{ true: "#73c2fb", false: null }}
             onValueChange={(value) => this.setState({ pickUp: value })}
           />
         </View>
@@ -79,7 +93,7 @@ class Quotation extends Component {
               this.setState({ showCalendar: !this.state.showCalendar })
             }
             title={this.state.date.toLocaleDateString("en-US")}
-            color="#5637DD"
+            color="#73c2fb"
             accessibilityLabel="Tap me to select a pick-up/delivery date"
           />
         </View>
@@ -99,10 +113,39 @@ class Quotation extends Component {
           <Button
             onPress={() => this.handleQuotation()}
             title="Request Quote"
-            color="#5637DD"
+            color="#73c2fb"
             accessibilityLabel="Tap me to request for order quotation"
           />
         </View>
+        <Modal
+          animationType={"slide"}
+          transparent={false}
+          visible={this.state.showModal}
+          onRequestClose={() => this.toggleModal()}
+        >
+          <View style={styles.modal}>
+            <Text style={styles.modalTitle}>
+              Request for Custom Cake Price Quotation
+            </Text>
+            <Text style={styles.modalText}>
+              Type of Cake: {this.state.cakeType}
+            </Text>
+            <Text style={styles.modalText}>
+              Pick-up? : {this.state.pickUp ? "Yes" : "No"}
+            </Text>
+            <Text style={styles.modalText}>
+              Date: {this.state.date.toLocaleDateString("en-US")}
+            </Text>
+            <Button
+              onPress={() => {
+                this.toggleModal();
+                this.resetForm();
+              }}
+              color="#73c2fb"
+              title="Close"
+            />
+          </View>
+        </Modal>
       </ScrollView>
     );
   }
@@ -122,6 +165,24 @@ const styles = StyleSheet.create({
   },
   formItem: {
     flex: 1,
+  },
+  modal: {
+    //alignItems: "center",
+    justifyContent: "center",
+    margin: 20,
+  },
+  modalTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    backgroundColor: "#ffff00",
+    textAlign: "center",
+    color: "#000",
+    marginBottom: 20,
+  },
+  modalText: {
+    fontSize: 18,
+    margin: 10,
+    color: "#000",
   },
 });
 

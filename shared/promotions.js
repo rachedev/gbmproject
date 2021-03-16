@@ -8,11 +8,10 @@ export const PROMOTIONS = [
   },
   {
     id: 1,
-    name: "Brownies",
-    image: "/assets/images/brownies.jpg",
+    name: "Cupcakes",
+    image: "/assets/images/cupcake.jpg",
     featured: true,
-    description:
-      "Once you have a taste of our brownies, you are going to crave for more!",
+    description: "The mini version of our wonderfulicious cakes!",
   },
   {
     id: 2,
@@ -24,9 +23,10 @@ export const PROMOTIONS = [
   },
   {
     id: 3,
-    name: "Cupcakes",
-    image: "/assets/images/cupcake.jpg",
+    name: "Brownies",
+    image: "/assets/images/brownies.jpg",
     featured: true,
-    description: "The mini version of our wonderfulicious cakes!",
+    description:
+      "Once you have a taste of our brownies, you are going to crave for more!",
   },
 ];

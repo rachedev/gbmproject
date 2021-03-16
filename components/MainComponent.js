@@ -236,7 +236,7 @@ const MainNavigator = createDrawerNavigator(
     },
   },
   {
-    drawerBackgroundColor: "#89cff0",
+    drawerBackgroundColor: "#73c2fb",
     contentComponent: CustomDrawerContentComponent,
   }
 );

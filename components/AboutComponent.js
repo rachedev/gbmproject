@@ -5,8 +5,8 @@ import { SERVICES } from "../shared/services";
 
 function Standard() {
   return (
-    <Card title="Our Quality Promise">
-      <Text>
+    <Card title="Our Quality Promise" style={{ margin: 10 }}>
+      <Text style={{ margin: 10 }}>
         We offer you, our customers, a partnership. We work with you to plan out
         your dream party baked goodies - from cakes to cookies to bars to
         breads. Our quality ingredients coupled with our artistic rendering of

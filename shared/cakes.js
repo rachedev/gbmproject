@@ -1,14 +1,6 @@
 export const CAKES = [
   {
     id: 0,
-    name: "Layer Cakes",
-    image: "/assets/images/mlayer1.jpg",
-    flavor: "chocolate or vanilla",
-    featured: false,
-    description: "Multiple layers, multiple deliciousness!",
-  },
-  {
-    id: 1,
     name: "Character Cakes",
     image: "/assets/images/char1.jpg",
     flavor: "chocolate or vanilla",
@@ -17,13 +9,21 @@ export const CAKES = [
       "Choose your favorite animated character and we'll make a cake with it as the centerpiece!",
   },
   {
-    id: 2,
+    id: 1,
     name: "Theme Cakes",
     image: "/assets/images/theme1.jpg",
     flavor: "chocolate or vanilla",
     featured: false,
     description:
       "What's your party's theme? Let's make a cake to celebrate with it!",
+  },
+  {
+    id: 2,
+    name: "Multi-Layer Cakes",
+    image: "/assets/images/mlayer1.jpg",
+    flavor: "chocolate or vanilla",
+    featured: false,
+    description: "Multiple layers, multiple deliciousness!",
   },
   {
     id: 3,
