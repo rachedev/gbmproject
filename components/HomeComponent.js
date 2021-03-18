@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, Animated } from "react-native";
 import { Card } from "react-native-elements";
 import { CAKES } from "../shared/cakes";
 import { PROMOTIONS } from "../shared/promotions";
@@ -23,7 +23,20 @@ class Home extends Component {
       cakes: CAKES,
       promotions: PROMOTIONS,
       services: SERVICES,
+      scaleValue: new Animated.Value(0),
     };
+  }
+
+  animate() {
+    Animated.timing(this.state.scaleValue, {
+      toValue: 1,
+      duration: 1500,
+      useNativeDriver: true,
+    }).start();
+  }
+
+  componentDidMount() {
+    this.animate();
   }
 
   static navigationOptions = {
@@ -32,12 +45,14 @@ class Home extends Component {
 
   render() {
     return (
-      <ScrollView>
+      <Animated.ScrollView
+        style={{ transform: [{ scale: this.state.scaleValue }] }}
+      >
         <RenderItem item={this.state.promotions[0]} />
         <RenderItem item={this.state.promotions[1]} />
         <RenderItem item={this.state.promotions[2]} />
         <RenderItem item={this.state.promotions[3]} />
-      </ScrollView>
+      </Animated.ScrollView>
     );
   }
 }
