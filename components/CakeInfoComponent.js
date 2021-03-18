@@ -2,13 +2,16 @@ import React, { Component } from "react";
 import { Text, View } from "react-native";
 import { Card } from "react-native-elements";
 import { CAKES } from "../shared/cakes";
+import * as Animatable from "react-native-animatable";
 
 function RenderCake({ cake }) {
   if (cake) {
     return (
-      <Card featuredTitle={cake.name} image={require("./images/mlayer1.jpg")}>
-        <Text style={{ margin: 10 }}>{cake.description}</Text>
-      </Card>
+      <Animatable.View animation="fadeInDown" duration={2000} delay={1000}>
+        <Card featuredTitle={cake.name} image={require("./images/mlayer1.jpg")}>
+          <Text style={{ margin: 10 }}>{cake.description}</Text>
+        </Card>
+      </Animatable.View>
     );
   }
   return <View />;

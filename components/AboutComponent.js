@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { ScrollView, Text, FlatList } from "react-native";
 import { Card, ListItem } from "react-native-elements";
 import { SERVICES } from "../shared/services";
+import * as Animatable from "react-native-animatable";
 
 function Standard() {
   return (
@@ -42,14 +43,16 @@ class About extends Component {
 
     return (
       <ScrollView>
-        <Standard />
-        <Card title="What We Offer">
-          <FlatList
-            data={this.state.services}
-            renderItem={renderService}
-            keyExtractor={(item) => item.id.toString()}
-          />
-        </Card>
+        <Animatable.View animation="fadeInDown" duration={2000} delay={1000}>
+          <Standard />
+          <Card title="What We Offer">
+            <FlatList
+              data={this.state.services}
+              renderItem={renderService}
+              keyExtractor={(item) => item.id.toString()}
+            />
+          </Card>
+        </Animatable.View>
       </ScrollView>
     );
   }

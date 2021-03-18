@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { FlatList } from "react-native";
 import { ListItem } from "react-native-elements";
 import { CAKES } from "../shared/cakes";
+import * as Animatable from "react-native-animatable";
 
 class Directory extends Component {
   constructor(props) {
@@ -19,12 +20,14 @@ class Directory extends Component {
     const { navigate } = this.props.navigation;
     const renderDirectoryItem = ({ item }) => {
       return (
-        <ListItem
-          title={item.name}
-          subtitle={item.description}
-          onPress={() => navigate("CakeInfo", { cakeId: item.id })}
-          leftAvatar={{ source: require("./images/mlayer1.jpg") }}
-        />
+        <Animatable.View animation="fadeInRightBig" duration={2000}>
+          <ListItem
+            title={item.name}
+            subtitle={item.description}
+            onPress={() => navigate("CakeInfo", { cakeId: item.id })}
+            leftAvatar={{ source: require("./images/mlayer1.jpg") }}
+          />
+        </Animatable.View>
       );
     };
 
