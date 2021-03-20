@@ -1,17 +1,28 @@
 import React, { Component } from "react";
 import { Text, View } from "react-native";
-import { Card } from "react-native-elements";
+import { Tile } from "react-native-elements";
+import { Card, ListItem } from "react-native-elements";
 import { CAKES } from "../shared/cakes";
 import * as Animatable from "react-native-animatable";
+import { ScrollView } from "react-native-gesture-handler";
 
 function RenderCake({ cake }) {
   if (cake) {
     return (
-      <Animatable.View animation="fadeInDown" duration={2000} delay={1000}>
-        <Card featuredTitle={cake.name} image={require("./images/mlayer1.jpg")}>
-          <Text style={{ margin: 10 }}>{cake.description}</Text>
-        </Card>
-      </Animatable.View>
+      <>
+        <Animatable.View animation="fadeInDown" duration={2000} delay={1000}>
+          <Card featuredTitle={cake.name} image={cake.image}>
+            <Text style={{ margin: 10 }}>{cake.description}</Text>
+          </Card>
+        </Animatable.View>
+        <Animatable.View animation="fadeInUp" duration={2000} delay={1000}>
+          {/* <Card featuredTitle={cake.name} image={cake.image}>
+            <Text style={{ margin: 10 }}>{cake.description}</Text>
+          </Card> */}
+          <Card image={cake.image2} />
+          <Card image={cake.image3} />
+        </Animatable.View>
+      </>
     );
   }
   return <View />;

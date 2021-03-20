@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Animated } from "react-native";
+import { View, Text, Animated, Image } from "react-native";
 import { Card } from "react-native-elements";
 import { CAKES } from "../shared/cakes";
 import { PROMOTIONS } from "../shared/promotions";
@@ -8,7 +8,15 @@ import { SERVICES } from "../shared/services";
 function RenderItem({ item }) {
   if (item) {
     return (
-      <Card featuredTitle={item.name} image={require("./images/mlayer1.jpg")}>
+      // <View style={{ margin: 20 }}>
+      //   <Text>{item.name}</Text>
+      //   <Image
+      //     source={item.image}
+      //     style={{ height: 75, width: 75, borderRadius: 20 }}
+      //   />
+      //   <Text style={{ margin: 10 }}>{item.description}</Text>
+      // </View>
+      <Card featuredTitle={item.name} image={item.image}>
         <Text style={{ margin: 10 }}>{item.description}</Text>
       </Card>
     );

@@ -25,7 +25,7 @@ class Directory extends Component {
             title={item.name}
             subtitle={item.description}
             onPress={() => navigate("CakeInfo", { cakeId: item.id })}
-            leftAvatar={{ source: require("./images/mlayer1.jpg") }}
+            leftAvatar={{ source: item.image }}
           />
         </Animatable.View>
       );
