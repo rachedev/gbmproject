@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import Home from "./HomeComponent";
-import Directory from "./DirectoryComponent";
-import CakeInfo from "./CakeInfoComponent";
-import About from "./AboutComponent";
-import Contact from "./ContactComponent";
-import Quotation from "./QuotationComponent";
+import React, { Component } from 'react';
+import Home from './HomeComponent';
+import Directory from './DirectoryComponent';
+import CakeInfo from './CakeInfoComponent';
+import About from './AboutComponent';
+import Contact from './ContactComponent';
+import Quotation from './QuotationComponent';
 
 import {
   View,
@@ -13,12 +13,12 @@ import {
   Text,
   ScrollView,
   Image,
-} from "react-native";
-import { createStackNavigator } from "react-navigation-stack";
-import { createDrawerNavigator, DrawerItems } from "react-navigation-drawer";
-import { createAppContainer } from "react-navigation";
-import { Icon } from "react-native-elements";
-import SafeAreaView from "react-native-safe-area-view";
+} from 'react-native';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
+import { createAppContainer } from 'react-navigation';
+import { Icon } from 'react-native-elements';
+import SafeAreaView from 'react-native-safe-area-view';
 
 const QuotationNavigator = createStackNavigator(
   {
@@ -27,11 +27,11 @@ const QuotationNavigator = createStackNavigator(
   {
     defaultNavigationOptions: ({ navigation }) => ({
       headerStyle: {
-        backgroundColor: "#ffff00",
+        backgroundColor: '#ffff00',
       },
-      headerTintColor: "#000",
+      headerTintColor: '#000',
       headerTitleStyle: {
-        color: "#000",
+        color: '#000',
       },
       headerLeft: (
         <Icon
@@ -52,11 +52,11 @@ const AboutNavigator = createStackNavigator(
   {
     defaultNavigationOptions: ({ navigation }) => ({
       headerStyle: {
-        backgroundColor: "#ffff00",
+        backgroundColor: '#ffff00',
       },
-      headerTintColor: "#000",
+      headerTintColor: '#000',
       headerTitleStyle: {
-        color: "#000",
+        color: '#000',
       },
       headerLeft: (
         <Icon
@@ -77,11 +77,11 @@ const ContactNavigator = createStackNavigator(
   {
     defaultNavigationOptions: ({ navigation }) => ({
       headerStyle: {
-        backgroundColor: "#ffff00",
+        backgroundColor: '#ffff00',
       },
-      headerTintColor: "#000",
+      headerTintColor: '#000',
       headerTitleStyle: {
-        color: "#000",
+        color: '#000',
       },
       headerLeft: (
         <Icon
@@ -113,14 +113,14 @@ const DirectoryNavigator = createStackNavigator(
     CakeInfo: { screen: CakeInfo },
   },
   {
-    initialRouteName: "Directory",
+    initialRouteName: 'Directory',
     defaultNavigationOptions: {
       headerStyle: {
-        backgroundColor: "#ffff00",
+        backgroundColor: '#ffff00',
       },
-      headerTintColor: "#000",
+      headerTintColor: '#000',
       headerTitleStyle: {
-        color: "#000",
+        color: '#000',
       },
     },
   }
@@ -133,11 +133,11 @@ const HomeNavigator = createStackNavigator(
   {
     defaultNavigationOptions: ({ navigation }) => ({
       headerStyle: {
-        backgroundColor: "#ffff00",
+        backgroundColor: '#ffff00',
       },
-      headerTintColor: "#000",
+      headerTintColor: '#000',
       headerTitleStyle: {
-        color: "#000",
+        color: '#000',
       },
       headerLeft: (
         <Icon
@@ -155,12 +155,12 @@ const CustomDrawerContentComponent = (props) => (
   <ScrollView>
     <SafeAreaView
       style={styles.container}
-      forceInset={{ top: "always", horizontal: "never" }}
+      forceInset={{ top: 'always', horizontal: 'never' }}
     >
       <View style={styles.drawerHeader}>
         <View style={{ flex: 1 }}>
           <Image
-            source={require("../assets/images/logo.jpg")}
+            source={require('../assets/images/logo.jpg')}
             style={styles.drawerImage}
           />
         </View>
@@ -186,7 +186,7 @@ const MainNavigator = createDrawerNavigator(
     Directory: {
       screen: DirectoryNavigator,
       navigationOptions: {
-        drawerLabel: "Cake Varieties",
+        drawerLabel: 'Cake Varieties',
         drawerIcon: ({ tintColor }) => (
           <Icon name="list" type="font-awesome" size={24} color={tintColor} />
         ),
@@ -195,7 +195,7 @@ const MainNavigator = createDrawerNavigator(
     Quotation: {
       screen: QuotationNavigator,
       navigationOptions: {
-        drawerLabel: "Request Price Quotation",
+        drawerLabel: 'Request Price Quotation',
         drawerIcon: ({ tintColor }) => (
           <Icon
             name="birthday-cake"
@@ -209,7 +209,7 @@ const MainNavigator = createDrawerNavigator(
     About: {
       screen: AboutNavigator,
       navigationOptions: {
-        drawerLabel: "About Us",
+        drawerLabel: 'About Us',
         drawerIcon: ({ tintColor }) => (
           <Icon
             name="info-circle"
@@ -223,7 +223,7 @@ const MainNavigator = createDrawerNavigator(
     Contact: {
       screen: ContactNavigator,
       navigationOptions: {
-        drawerLabel: "Contact Us",
+        drawerLabel: 'Contact Us',
         drawerIcon: ({ tintColor }) => (
           <Icon
             name="address-card"
@@ -236,7 +236,7 @@ const MainNavigator = createDrawerNavigator(
     },
   },
   {
-    drawerBackgroundColor: "#73c2fb",
+    drawerBackgroundColor: '#73c2fb',
     contentComponent: CustomDrawerContentComponent,
   }
 );
@@ -250,7 +250,7 @@ class Main extends Component {
         style={{
           flex: 1,
           paddingTop:
-            Platform.OS === "ios" ? 0 : Expo.Constants.statusBarHeight,
+            Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight,
         }}
       >
         <AppNavigator />
@@ -264,17 +264,17 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   drawerHeader: {
-    backgroundColor: "#ffff00",
+    backgroundColor: '#ffff00',
     height: 140,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     flex: 1,
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   drawerHeaderText: {
-    color: "#000",
+    color: '#000',
     fontSize: 24,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   drawerImage: {
     margin: 10,
@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
   },
   stackIcon: {
     marginLeft: 10,
-    color: "#000",
+    color: '#000',
     fontSize: 24,
   },
 });

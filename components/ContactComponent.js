@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import { ScrollView, Text } from "react-native";
-import { Card } from "react-native-elements";
-import * as Animatable from "react-native-animatable";
+import React, { Component } from 'react';
+import { View, ScrollView, Text, Image } from 'react-native';
+import { Card } from 'react-native-elements';
+import * as Animatable from 'react-native-animatable';
+import { ImageStore } from 'react-native';
 
 class Contact extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class Contact extends Component {
   }
 
   static navigationOptions = {
-    title: "Contact Us",
+    title: 'Contact Us',
   };
 
   render() {
@@ -23,6 +24,11 @@ class Contact extends Component {
             <Text>Phone: 123-456-7890</Text>
             <Text>Email: emailaddr@somewhere.co</Text>
           </Card>
+        </Animatable.View>
+        <Animatable.View animation="fadeInUp" duration={2000} delay={1000}>
+          <View style={{ marginHorizontal: 40, marginTop: 20 }}>
+            <Image source={require('../assets/images/logo.jpg')} />
+          </View>
         </Animatable.View>
       </ScrollView>
     );

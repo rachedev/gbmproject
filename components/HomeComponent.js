@@ -1,24 +1,24 @@
-import React, { Component } from "react";
-import { View, Text, Animated, Image } from "react-native";
-import { Card } from "react-native-elements";
-import { CAKES } from "../shared/cakes";
-import { PROMOTIONS } from "../shared/promotions";
-import { SERVICES } from "../shared/services";
+import React, { Component } from 'react';
+import { View, Text, Animated, Image } from 'react-native';
+import { Card } from 'react-native-elements';
+import { CAKES } from '../shared/cakes';
+import { PROMOTIONS } from '../shared/promotions';
+import { SERVICES } from '../shared/services';
 
 function RenderItem({ item }) {
   if (item) {
     return (
-      // <View style={{ margin: 20 }}>
-      //   <Text>{item.name}</Text>
-      //   <Image
-      //     source={item.image}
-      //     style={{ height: 75, width: 75, borderRadius: 20 }}
-      //   />
-      //   <Text style={{ margin: 10 }}>{item.description}</Text>
-      // </View>
-      <Card featuredTitle={item.name} image={item.image}>
+      <View style={{ margin: 20 }}>
+        <Text>{item.name}</Text>
+        <Image
+          source={item.image}
+          style={{ height: 350, width: 375, borderRadius: 20 }}
+        />
         <Text style={{ margin: 10 }}>{item.description}</Text>
-      </Card>
+      </View>
+      // <Card featuredTitle={item.name} image={item.image}>
+      //   <Text style={{ margin: 10 }}>{item.description}</Text>
+      // </Card>
     );
   }
   return <View />;
@@ -48,7 +48,7 @@ class Home extends Component {
   }
 
   static navigationOptions = {
-    title: "Home",
+    title: 'Home',
   };
 
   render() {
