@@ -13,11 +13,11 @@ function RenderCake({ cake }) {
         <Animatable.View animation="fadeInDown" duration={2000} delay={1000}>
           <View style={{ margin: 20 }}>
             <Text>{cake.name}</Text>
+            <Text style={{ margin: 10 }}>{cake.description}</Text>
             <Image
               source={cake.image}
               style={{ height: 350, width: 375, borderRadius: 20 }}
             />
-            <Text style={{ margin: 10 }}>{cake.description}</Text>
           </View>
           {/* <Card featuredTitle={cake.name} image={cake.image}>
             <Text style={{ margin: 10 }}>{cake.description}</Text>
