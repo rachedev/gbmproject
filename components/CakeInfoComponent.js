@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Share } from 'react-native';
 import { Tile } from 'react-native-elements';
-import { Card, ListItem } from 'react-native-elements';
+import { Card, ListItem, Icon } from 'react-native-elements';
 import { CAKES } from '../shared/cakes';
 import * as Animatable from 'react-native-animatable';
 import { ScrollView } from 'react-native-gesture-handler';
 
 function RenderCake({ cake }) {
+
+  const shareCake = (title, message, url) => {
+        Share.share({
+            title: title,
+            message: `${title}: ${message} ${url}`,
+            url: url
+        },{
+            dialogTitle: 'Share ' + title
+        });
+  };
+
   if (cake) {
     return (
       <>
@@ -17,6 +28,14 @@ function RenderCake({ cake }) {
             <Image
               source={cake.image}
               style={{ height: 350, width: 375, borderRadius: 20 }}
+            />
+            <Icon
+                name={'share'}
+                type='font-awesome'
+                color='#73c2fb'
+                raised
+                reverse
+                onPress={() => shareCake(cake.name, cake.description, cake.image)} 
             />
           </View>
           {/* <Card featuredTitle={cake.name} image={cake.image}>
