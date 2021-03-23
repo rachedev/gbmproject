@@ -5,7 +5,7 @@ import CakeInfo from './CakeInfoComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
 import Quotation from './QuotationComponent';
-
+import Login from './LoginComponent';
 import {
   View,
   Platform,
@@ -151,6 +151,31 @@ const HomeNavigator = createStackNavigator(
   }
 );
 
+const LoginNavigator = createStackNavigator(
+  {
+    Login: { screen: Login },
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        backgroundColor: '#ffff00',
+      },
+      headerTintColor: '#000',
+      headerTitleStyle: {
+        color: '#000',
+      },
+      headerLeft: (
+        <Icon
+          name="sign-in"
+          type="font-awesome"
+          iconStyle={styles.stackIcon}
+          onPress={() => navigation.toggleDrawer()}
+        />
+      ),
+    }),
+  }
+);
+
 const CustomDrawerContentComponent = (props) => (
   <ScrollView>
     <SafeAreaView
@@ -227,6 +252,19 @@ const MainNavigator = createDrawerNavigator(
         drawerIcon: ({ tintColor }) => (
           <Icon
             name="address-card"
+            type="font-awesome"
+            size={24}
+            color={tintColor}
+          />
+        ),
+      },
+    },
+    Login: {
+      screen: LoginNavigator,
+      navigationOptions: {
+        drawerIcon: ({ tintColor }) => (
+          <Icon
+            name="sign-in"
             type="font-awesome"
             size={24}
             color={tintColor}
