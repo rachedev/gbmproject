@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Animated, Image } from 'react-native';
 import { Card } from 'react-native-elements';
+import { ScrollView } from 'react-native-gesture-handler';
 import { CAKES } from '../shared/cakes';
 import { PROMOTIONS } from '../shared/promotions';
 import { SERVICES } from '../shared/services';
@@ -8,8 +9,10 @@ import { SERVICES } from '../shared/services';
 function RenderItem({ item }) {
   if (item) {
     return (
-      <View style={{ margin: 20 }}>
-        <Text>{item.name}</Text>
+      <View
+        style={{ padding: 20, justifyContent: 'center', alignItems: 'center' }}
+      >
+        <Text style={{ margin: 20, fontSize: 24 }}>{item.name}</Text>
         <Image
           source={item.image}
           style={{ height: 350, width: 375, borderRadius: 20 }}
@@ -55,7 +58,9 @@ class Home extends Component {
     return (
       <Animated.ScrollView
         style={{ transform: [{ scale: this.state.scaleValue }] }}
+        stickyHeaderIndices={[0]}
       >
+        <Text>Gingerbread Man Bakery</Text>
         <RenderItem item={this.state.promotions[0]} />
         <RenderItem item={this.state.promotions[1]} />
         <RenderItem item={this.state.promotions[2]} />
