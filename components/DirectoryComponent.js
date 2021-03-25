@@ -44,7 +44,7 @@ class Directory extends Component {
             >
               <Image
                 source={item.image}
-                style={{ height: 50, width: 50, borderRadius: 25 }}
+                style={{ height: 70, width: 70, borderRadius: 25 }}
               />
               <View
                 style={{
@@ -53,10 +53,14 @@ class Directory extends Component {
                   //backgroundColor: 'lightblue',
                 }}
               >
-                <Text style={{ paddingBottom: 5, fontWeight: '700' }}>
+                <Text
+                  style={{ paddingBottom: 5, fontSize: 18, fontWeight: '700' }}
+                >
                   {item.name}
                 </Text>
-                <Text>{item.description}</Text>
+                <Text style={{ fontSize: 14, paddingRight: 25 }}>
+                  {item.description}
+                </Text>
               </View>
             </View>
           </TouchableOpacity>

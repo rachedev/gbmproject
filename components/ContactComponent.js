@@ -49,7 +49,10 @@ class Contact extends Component {
         </Animatable.View>
         <Animatable.View animation="fadeInUp" duration={2000} delay={1000}>
           <View style={{ marginHorizontal: 40, marginTop: 20 }}>
-            <Image source={require('../assets/images/logo.jpg')} />
+            <Image
+              source={require('../assets/images/logo.jpg')}
+              style={{ borderRadius: 100 }}
+            />
           </View>
         </Animatable.View>
       </ScrollView>

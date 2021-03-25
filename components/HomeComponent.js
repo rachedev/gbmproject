@@ -12,12 +12,14 @@ function RenderItem({ item }) {
       <View
         style={{ padding: 20, justifyContent: 'center', alignItems: 'center' }}
       >
-        <Text style={{ margin: 20, fontSize: 24 }}>{item.name}</Text>
+        <Text style={{ margin: 20, fontSize: 24, fontWeight: 'bold' }}>
+          {item.name}
+        </Text>
         <Image
           source={item.image}
-          style={{ height: 350, width: 375, borderRadius: 20 }}
+          style={{ height: 500, width: 375, borderRadius: 20 }}
         />
-        <Text style={{ margin: 10 }}>{item.description}</Text>
+        <Text style={{ margin: 10, fontSize: 16 }}>{item.description}</Text>
       </View>
       // <Card featuredTitle={item.name} image={item.image}>
       //   <Text style={{ margin: 10 }}>{item.description}</Text>
@@ -60,7 +62,7 @@ class Home extends Component {
         style={{ transform: [{ scale: this.state.scaleValue }] }}
         stickyHeaderIndices={[0]}
       >
-        <Text>Gingerbread Man Bakery</Text>
+        <Text style={{ margin: 10, fontSize: 20 }}>Gingerbread Man Bakery</Text>
         <RenderItem item={this.state.promotions[0]} />
         <RenderItem item={this.state.promotions[1]} />
         <RenderItem item={this.state.promotions[2]} />

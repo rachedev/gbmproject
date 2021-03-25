@@ -24,10 +24,20 @@ function RenderCake({ cake }) {
     return (
       <ScrollView>
         {/* <Animatable.View animation="fadeInDown" duration={2000} delay={1000}> */}
-        <View style={{ margin: 20 }}>
-          <Text>{cake.name}</Text>
-          <Text style={{ margin: 10 }}>{cake.description}</Text>
-          <Image source={cake.image} style={{ height: 400, width: 375 }} />
+        <View
+          style={{ margin: 20, justifyContent: 'center', alignItems: 'center' }}
+        >
+          <Text style={{ fontSize: 20, fontWeight: '700' }}>{cake.name}</Text>
+          <Text style={{ margin: 10, fontSize: 16 }}>{cake.description}</Text>
+          <Image
+            source={cake.image}
+            style={{
+              height: undefined,
+              width: '100%',
+              aspectRatio: 1,
+              marginTop: 20,
+            }}
+          />
           <Icon
             name={'share'}
             type="font-awesome"
@@ -45,9 +55,22 @@ function RenderCake({ cake }) {
         {/* <Card featuredTitle={cake.name} image={cake.image}>
             <Text style={{ margin: 10 }}>{cake.description}</Text>
           </Card> */}
-        <View style={{ margin: 20 }}>
-          <Image source={cake.image2} style={{ height: 400, width: 375 }} />
-          <Image source={cake.image3} style={{ height: 350, width: 375 }} />
+        <View
+          style={{ margin: 20, justifyContent: 'center', alignItems: 'center' }}
+        >
+          <Image
+            source={cake.image2}
+            style={{
+              height: undefined,
+              width: '100%',
+              aspectRatio: 1,
+              marginBottom: 20,
+            }}
+          />
+          <Image
+            source={cake.image3}
+            style={{ height: undefined, width: '100%', aspectRatio: 1 }}
+          />
           {/* <Card image={cake.image2} />
           <Card image={cake.image3} /> */}
         </View>
