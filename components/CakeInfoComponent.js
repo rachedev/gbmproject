@@ -34,7 +34,7 @@ function RenderCake({ cake }) {
             style={{
               height: undefined,
               width: '100%',
-              aspectRatio: 1,
+              aspectRatio: 0.9,
               marginTop: 20,
             }}
           />
@@ -63,13 +63,13 @@ function RenderCake({ cake }) {
             style={{
               height: undefined,
               width: '100%',
-              aspectRatio: 1,
+              aspectRatio: 0.9,
               marginBottom: 20,
             }}
           />
           <Image
             source={cake.image3}
-            style={{ height: undefined, width: '100%', aspectRatio: 1 }}
+            style={{ height: undefined, width: '100%', aspectRatio: 0.9 }}
           />
           {/* <Card image={cake.image2} />
           <Card image={cake.image3} /> */}

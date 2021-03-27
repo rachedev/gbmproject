@@ -62,7 +62,17 @@ class Home extends Component {
         style={{ transform: [{ scale: this.state.scaleValue }] }}
         stickyHeaderIndices={[0]}
       >
-        <Text style={{ margin: 10, fontSize: 20 }}>Gingerbread Man Bakery</Text>
+        <Text
+          style={{
+            margin: 10,
+            fontSize: 24,
+            fontWeight: '800',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          GINGERBREAD MAN BAKERY
+        </Text>
         <RenderItem item={this.state.promotions[0]} />
         <RenderItem item={this.state.promotions[1]} />
         <RenderItem item={this.state.promotions[2]} />

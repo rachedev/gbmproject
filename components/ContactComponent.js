@@ -26,7 +26,7 @@ class Contact extends Component {
     return (
       <ScrollView>
         <Animatable.View animation="fadeInDown" duration={2000} delay={1000}>
-          <Card title="Contact Information" wrapperStyle={{ margin: 20 }}>
+          <Card title="Contact Information" wrapperStyle={{ margin: 15 }}>
             <Text>1 Bakery Avenue</Text>
             <Text>Bgo</Text>
             <Text style={{ marginBottom: 10 }}>Philippines</Text>
@@ -34,7 +34,7 @@ class Contact extends Component {
             <Text>Email: emailaddr@somewhere.co</Text>
             <Button
               title="Send email"
-              buttonStyle={{ backgroundColor: '#73c2fb', margin: 40 }}
+              buttonStyle={{ backgroundColor: '#73c2fb', marginTop: 30 }}
               icon={
                 <Icon
                   name="envelope-o"
@@ -48,10 +48,17 @@ class Contact extends Component {
           </Card>
         </Animatable.View>
         <Animatable.View animation="fadeInUp" duration={2000} delay={1000}>
-          <View style={{ marginHorizontal: 40, marginTop: 20 }}>
+          <View
+            style={{
+              marginHorizontal: 40,
+              marginTop: 30,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
             <Image
               source={require('../assets/images/logo.jpg')}
-              style={{ borderRadius: 100 }}
+              style={{ borderRadius: 50, width: '100%', aspectRatio: 0.9 }}
             />
           </View>
         </Animatable.View>
