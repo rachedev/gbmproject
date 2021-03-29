@@ -10,7 +10,7 @@ function RenderItem({ item }) {
   if (item) {
     return (
       <View
-        style={{ padding: 20, justifyContent: 'center', alignItems: 'center' }}
+        style={{ padding: 10, justifyContent: 'center', alignItems: 'center' }}
       >
         <Text style={{ margin: 20, fontSize: 24, fontWeight: 'bold' }}>
           {item.name}
@@ -28,6 +28,23 @@ function RenderItem({ item }) {
   }
   return <View />;
 }
+
+const StickyHeaderComponent = () => {
+  return (
+    <View
+      style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 20,
+        backgroundColor: '#73c2fb',
+      }}
+    >
+      <Text style={{ fontSize: 24, fontWeight: 'bold' }}>
+        GINGERBREAD MAN BAKERY
+      </Text>
+    </View>
+  );
+};
 
 class Home extends Component {
   constructor(props) {
@@ -62,17 +79,7 @@ class Home extends Component {
         style={{ transform: [{ scale: this.state.scaleValue }] }}
         stickyHeaderIndices={[0]}
       >
-        <Text
-          style={{
-            margin: 10,
-            fontSize: 24,
-            fontWeight: '800',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          GINGERBREAD MAN BAKERY
-        </Text>
+        <StickyHeaderComponent />
         <RenderItem item={this.state.promotions[0]} />
         <RenderItem item={this.state.promotions[1]} />
         <RenderItem item={this.state.promotions[2]} />
